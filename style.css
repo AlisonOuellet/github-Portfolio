@@ -1,36 +1,80 @@
-body{
-    background-color: lightgrey;
+/* Navbar */
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Global */
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Pacifico', cursive;
+    font-size: 16px;
 }
 
 h1 {
-  color: navy;
-  margin-left: 20px;
+    font-size: 2em;
 }
 
-p {
-    font-family: Arial, sans-serif;
-    font-size: 14px;  
+/* Sections */
+
+.home {
+    background: url('https://lh3.googleusercontent.com/-N972KISC-6U/VzfJCFuU_YI/AAAAAAAAOsc/hWSMUzacdmQvCr_H4Zy2mYYcUtkkvZRsACCo/s2048/DSC_0297-blancoynegro.jpg')
+        no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    padding-top: 60px;
 }
 
-.navbar {
-        display: flex;
-        background: #fff;
-        border-radius: 30px;
-        padding: 10px 20px;
-        margin: 0 auto;
-        width: 95%;
-        justify-content: space-between;
-        align-items: center;
-        position: fixed; /* je veux vrm sa?*/
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 9999;
-    }
+.about {
+    background: url('https://lh3.googleusercontent.com/-AcWr5_cFuKM/Vzhh0t3QCJI/AAAAAAAAOtE/BYyyhvdCgP0YEIScNmoVewX-O1QmxiHuQCCo/s2048/LOGO5.jpg')
+        no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    padding-top: 60px;
+}
 
-.menu {
-        display: flex;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-      }
+.portfolio {
+    background-color: #ebebeb;
+    padding-top: 60px;
+    min-height: 100%;
+}
+
+.contact {
+    background-color: #ebebeb;
+    width: 100%;
+    padding-top: 70px;
+    padding-bottom: 80px;
+}
+
+/* Home content centering */
+
+.home .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Extra */
+
+.extra {
+    height: 480px;
+}
