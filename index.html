@@ -1,20 +1,87 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>My Web Page</title>
-        <link rel="stylesheet" href="style.css">
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
 
-    </head>
-    <body>
-        <nav class="navbar">
-            <ul class="menu">
-                <li class="menu-item"><a href="#home">Home</a></li>
-                <li class="menu-item"><a href="#about">About</a></li>
-                <li class="menu-item"><a href="#contact">Contact</a></li>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+    <!-- CSS personnalisé -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <div class="navbar-header">
+            <div class="navbar-brand visible-xs">
+                Alison Ouellet - Portfolio
+            </div>
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="nav navbar-nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
-        <h1>Welcome to My Web Page</h1>
-        <p>This is a sample paragraph to demonstrate a basic HTML structure.</p>
-    </body>
+        </div>
+
+    </div>
+</nav>
+<!-- FIN NAVBAR -->
+
+<!-- HOME -->
+<div class="home" id="home">
+    <div class="container">
+        <blockquote class="blockquote blockquote-reverse hidden-xs">
+            <h1><strong>Alison Ouellet</strong></h1>
+            <h1>PERSONAL PORTFOLIO</h1>
+        </blockquote>
+    </div>
+</div>
+<!-- FIN HOME -->
+
+<!-- ABOUT -->
+<div class="about" id="about">
+    <div class="container">
+        <h1 class="text-center">About me</h1>
+    </div>
+</div>
+<!-- FIN ABOUT -->
+
+<!-- PORTFOLIO -->
+<div class="portfolio" id="portfolio">
+    <div class="container">
+        <h1 class="text-center">Portfolio</h1>
+    </div>
+</div>
+<!-- FIN PORTFOLIO -->
+
+<!-- CONTACT -->
+<div class="contact" id="contact">
+    <div class="container">
+        <h1 class="text-center">Contact me</h1>
+    </div>
+</div>
+<!-- FIN CONTACT -->
+
+<!-- Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</body>
 </html>
