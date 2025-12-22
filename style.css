@@ -1,14 +1,22 @@
-/* Navbar */
-
+/* Barre de navigation */
 .navbar .navbar-nav {
     display: inline-block;
+    position: relative;
     float: none;
+    top: -60%; /* Position initiale du menu hors de l'écran */
+    transition: top 0.3s ease; /* Animation de transition quand scroll vers le bas*/
 }
 
+.navbar.show-menu .navbar-nav {
+  top: 0;
+}
+
+/* Centrer le menu */
 .navbar .navbar-collapse {
     text-align: center;
 }
 
+/* Centrer le titre sur mobile */
 .navbar-brand {
     position: absolute;
     width: 100%;
@@ -17,8 +25,7 @@
     margin: 0 auto;
 }
 
-/* Global */
-
+/* Styles globaux */
 html,
 body {
     height: 100%;
@@ -29,12 +36,12 @@ body {
     font-size: 16px;
 }
 
+/* Titres */
 h1 {
     font-size: 2em;
 }
 
 /* Sections */
-
 .home {
     background: url('images/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg')
         no-repeat center center fixed;
@@ -43,6 +50,7 @@ h1 {
     padding-top: 60px;
 }
 
+/* Section About */
 .about {
     background: url('https://lh3.googleusercontent.com/-AcWr5_cFuKM/Vzhh0t3QCJI/AAAAAAAAOtE/BYyyhvdCgP0YEIScNmoVewX-O1QmxiHuQCCo/s2048/LOGO5.jpg')
         no-repeat center center fixed;
@@ -51,12 +59,14 @@ h1 {
     padding-top: 60px;
 }
 
+/* Section Portfolio */
 .portfolio {
     background-color: #ebebeb;
     padding-top: 60px;
     min-height: 100%;
 }
 
+/* Section Contact */
 .contact {
     background-color: #ebebeb;
     width: 100%;
@@ -64,8 +74,7 @@ h1 {
     padding-bottom: 80px;
 }
 
-/* Home content centering */
-
+/* Centrer le contenu de la section Home */
 .home .container {
     position: absolute;
     top: 50%;
@@ -73,8 +82,8 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
-/* Extra */
 
+/* Ajuster la hauteur de la section Extra */
 .extra {
     height: 480px;
 }
