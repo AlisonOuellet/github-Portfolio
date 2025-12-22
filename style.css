@@ -1,0 +1,36 @@
+body{
+    background-color: lightgrey;
+}
+
+h1 {
+  color: navy;
+  margin-left: 20px;
+}
+
+p {
+    font-family: Arial, sans-serif;
+    font-size: 14px;  
+}
+
+.navbar {
+        display: flex;
+        background: #fff;
+        border-radius: 30px;
+        padding: 10px 20px;
+        margin: 0 auto;
+        width: 95%;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed; /* je veux vrm sa?*/
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+    }
+
+.menu {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
