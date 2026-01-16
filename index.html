@@ -36,9 +36,12 @@
         <!-- Menu de navigation -->
         <div class="collapse navbar-collapse" id="menu">
             <ul class="nav navbar-nav">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À propos de moi</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#experience">Expérience</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#site web">Site web</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -51,7 +54,7 @@
     <div class="container">
         <blockquote class="blockquote blockquote-reverse hidden-xs">
             <h1><strong>Alison Ouellet</strong></h1>
-            <h1>PERSONAL PORTFOLIO</h1>
+            <h1>PORTFOLIO PERSONNEL</h1>
         </blockquote>
         <!-- Social icons juste en dessous -->
     <ul class="social home-social" aria-label="Réseaux sociaux">
@@ -111,20 +114,81 @@
     </div>
 </div>
 
-<!-- ABOUT -->
+<!-- À PROPOS DE MOI -->
 <div class="about" id="about">
     <div class="container">
-        <h1 class="text-center">About me</h1>
+        <h1 class="text-left">À propos de moi</h1>
+                <h2 class="text-left" style="text-align: justify;">Je suis étudiante passionnée par la bio-informatique pour une raison simple : elle permet de donner du sens à des données biologiques complexes à l’aide de méthodes computationnelles. J’aime travailler à l’intersection de la biologie et de l’informatique, là où les données deviennent un outil pour explorer, comprendre et répondre à des questions concrètes.</h2>
+                <h2 class="text-left" style="text-align: justify;">À travers mes projets académiques et personnels, j’ai développé des compétences en analyse de données biologiques, en programmation et en automatisation de traitements. J’accorde une grande importance à la clarté du code, à la reproductibilité des analyses et à la compréhension du problème biologique avant de passer à l’implémentation.</h2>
+                <h2 class="text-left" style="text-align: justify;">Ce portfolio présente une sélection de projets qui reflètent ma manière de travailler : partir d’une question biologique, concevoir une approche computationnelle adaptée, puis produire des résultats clairs et interprétables. Chaque projet représente une étape de mon apprentissage et de ma curiosité pour le domaine.</h2>
+                <h2 class="text-left" style="text-align: justify;">Je suis actuellement à la recherche d’opportunités en bio-informatique où je pourrais continuer à développer mes compétences, collaborer avec une équipe et contribuer à des projets ayant un impact réel.</h2>
     </div>
 </div>
 
-
-<!-- PORTFOLIO -->
-<div class="portfolio" id="portfolio">
+<!-- EXPERIENCE -->
+<div class="portfolio" id="experience">
     <div class="container">
-        <h1 class="text-center">Portfolio</h1>
+        <h1 class="text-center">Expérience</h1>
     </div>
 </div>
+
+<!-- Projets -->
+<div class="portfolio" id="projets">
+    <div class="container">
+        <h1 class="text-center">Projets</h1>
+        <div class="row projets-grid">
+
+            <!-- Projet 1 -->
+            <div class="col-sm-6 col-md-4">
+                <a href="https://github.com/AlisonOuellet/tp2_clion"
+                   target="_blank"
+                   class="projet-card">
+                    <h3>Graphes, réseau aérien et théorie du contrat</h3>
+                    <p>Le projet consiste à concevoir et implanter une structure de graphe générique, puis à l’utiliser pour modéliser un réseau aérien reliant différentes villes par des liaisons pondérées.</p>
+                    <span class="tech">C++ • OOP • Tests unitaires • CMake</span>
+                </a>
+            </div>
+
+            <!-- Projet 2 -->
+            <div class="col-sm-6 col-md-4">
+                <a href="https://github.com/AlisonOuellet/Genome-scale-metabolic-models"
+                   target="_blank"
+                   class="projet-card featured">
+                    <h3>Modélisation métabolique à l’échelle du génome</h3>
+                    <p>Analyse de modèles métaboliques à l’échelle du génome à l’aide de simulations FBA afin d’étudier la croissance et la production de métabolites.</p>
+                    <span class="tech">Python • FBA • Analyse de données • Bio-informatique</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Site web -->
+<section class="site-web" id="site-web">
+    <div class="site-web-container">
+        <h1 class="section-title">Site web</h1>
+
+        <a href="https://gitlab.igem.org/2025/ulaval"
+           target="_blank"
+           class="site-web-card">
+
+            <div class="site-web-content">
+                <h3>iGEM ULaval 2025</h3>
+                <p>
+                    Développement du site web officiel de l’équipe iGEM ULaval 2025 :
+                    design, intégration front-end et structuration du contenu scientifique.
+                </p>
+                <span class="tech">
+                    HTML • CSS • JavaScript • GitLab • iGEM
+                </span>
+            </div>
+        </a>
+    </div>
+</section>
+
+
+
+
 
 <!-- CONTACT -->
 <div class="contact" id="contact">
@@ -148,6 +212,7 @@
     }
   });
 </script>
+
 
 </body>
 </html>

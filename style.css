@@ -38,7 +38,22 @@ body {
 
 /* Titres */
 h1 {
-    font-size: 2em;
+    font-size: 14 px;
+    line-height: 1.6;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.3em;
+    margin-top: 1rem;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+}
+
+h3 {
+    font-family: 'Inter', sans-serif;
+
 }
 
 /* Sections */
@@ -127,3 +142,121 @@ h1 {
     height: 50px;
     display: block;
 }
+
+
+/* ====== PROJETS ====== */
+
+.projets-grid {
+    margin-top: 40px;
+}
+
+.projet-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 25px;
+    margin-bottom: 30px;
+
+    text-decoration: none;
+    color: #333;
+
+    height: 260px; /* carré visuel */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.projet-card:hover,
+.projet-card:focus {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+}
+
+.projet-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.projet-card p {
+    font-size: 0.95em;
+    line-height: 1.4;
+    flex-grow: 1;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+}
+
+.projet-card .tech {
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 15px;
+}
+
+
+.projet-card.featured {
+    border: 2px solid #797c80; /* accent moderne */
+    box-shadow: 
+        0 0 0 rgba(0, 0, 0, 0),
+        0 8px 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+/* ====== SITE WEB ====== */
+
+.site-web {
+    background-color: #ebebeb;
+    padding: 80px 20px;
+}
+
+.site-web-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+/* Carte principale */
+.site-web-card {
+    display: block;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 40px;
+    text-decoration: none;
+    color: #333;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.site-web-card:hover,
+.site-web-card:focus {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenu */
+.site-web-content h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.site-web-content p {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+
+.site-web-content .tech {
+    font-size: 0.85em;
+    color: #777;
+}
+
+
