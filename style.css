@@ -38,20 +38,21 @@ body {
 
 /* Titres */
 h1 {
-    font-size: 14px;
+    font-size: 35px;
     line-height: 1.6;
     font-weight: 400;
     margin-bottom: 1rem;
 }
 
 h2 {
-    font-size: 1.3em;
+    font-size: 22px;
     margin-top: 1rem;
     color: #333;
     font-family: 'Inter', sans-serif;
 }
 
 h3 {
+    font-size: 20px;
     font-family: 'Inter', sans-serif;
 
 }
@@ -144,13 +145,10 @@ h3 {
 }
 
 
-/* ====== PROJETS ====== */
+/* ====== PROJETS + SITE WEB ====== */
 
-.projets-grid {
-    margin-top: 40px;
-}
-
-.projet-card {
+.projet-card,
+.site-web-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -163,24 +161,29 @@ h3 {
     text-decoration: none;
     color: #333;
 
-    height: 260px; /* carré visuel */
+    min-height: 260px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .projet-card:hover,
-.projet-card:focus {
+.projet-card:focus,
+.site-web-card:hover,
+.site-web-card:focus {
     transform: translateY(-6px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     text-decoration: none;
 }
 
-.projet-card h3 {
+.projet-card h3,
+.site-web-card h3 {
     margin-top: 0;
     margin-bottom: 10px;
     font-weight: 600;
+    font-family: 'Inter', sans-serif;
 }
 
-.projet-card p {
+.projet-card p,
+.site-web-card p {
     font-size: 0.95em;
     line-height: 1.4;
     flex-grow: 1;
@@ -188,75 +191,17 @@ h3 {
     font-family: 'Inter', sans-serif;
 }
 
-.projet-card .tech {
+.projet-card .tech,
+.site-web-card .tech {
     font-size: 0.8em;
     color: #777;
     margin-top: 15px;
 }
 
-
-.projet-card.featured {
-    border: 2px solid #797c80; /* accent moderne */
-    box-shadow: 
-        0 0 0 rgba(0, 0, 0, 0),
-        0 8px 25px rgba(0, 0, 0, 0.15);
+/* Featured (même pour les deux) */
+.projet-card.featured,
+.site-web-card.featured {
+    border: 2px solid #797c80;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     position: relative;
 }
-
-/* ====== SITE WEB ====== */
-
-.site-web {
-    background-color: #ffffff;
-    padding: 25px;
-}
-
-.site-web-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-}
-
-/* Carte principale */
-.site-web-card {
-    display: block;
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 40px;
-    text-decoration: none;
-    color: #333;
-
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.site-web-card:hover,
-.site-web-card:focus {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-}
-
-/* Contenu */
-.site-web-content h3 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.site-web-content p {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    font-size: 1em;
-}
-
-.site-web-content .tech {
-    font-size: 0.85em;
-    color: #777;
-}
-
-
