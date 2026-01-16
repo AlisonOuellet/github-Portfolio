@@ -38,7 +38,7 @@ body {
 
 /* Titres */
 h1 {
-    font-size: 14 px;
+    font-size: 14px;
     line-height: 1.6;
     font-weight: 400;
     margin-bottom: 1rem;
@@ -206,8 +206,8 @@ h3 {
 /* ====== SITE WEB ====== */
 
 .site-web {
-    background-color: #ebebeb;
-    padding: 80px 20px;
+    background-color: #ffffff;
+    padding: 25px;
 }
 
 .site-web-container {
