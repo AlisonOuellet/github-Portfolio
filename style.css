@@ -147,7 +147,23 @@ h3 {
 
 /* ====== PROJETS + SITE WEB ====== */
 
-.projet-card,
+.projet-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 25px;
+    margin-bottom: 20px;
+
+    text-decoration: none;
+    color: #333;
+
+    min-height: 260px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
 .site-web-card {
     display: flex;
     flex-direction: column;
@@ -156,12 +172,12 @@ h3 {
     background-color: #ffffff;
     border-radius: 6px;
     padding: 25px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 
     text-decoration: none;
     color: #333;
 
-    min-height: 260px;
+    min-height: 180px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -177,7 +193,7 @@ h3 {
 .projet-card h3,
 .site-web-card h3 {
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     font-weight: 600;
     font-family: 'Inter', sans-serif;
 }
@@ -209,7 +225,7 @@ h3 {
 
 /* ====== NOUVELLES ====== */
 
-.news-result {
+.nouvelle-result {
   display: block;
   background: #fff;
   border-radius: 10px;
@@ -220,22 +236,22 @@ h3 {
   transition: box-shadow .2s ease, transform .2s ease;
 }
 
-.news-result:hover,
-.news-result:focus {
+.nouvelle-result:hover,
+.nouvelle-result:focus {
   text-decoration: none;
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
 /* Ligne source */
-.news-source {
+.nouvelle-source {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 10px;
 }
 
-.news-favicon {
+.nouvelle-favicon {
   width: 22px;
   height: 22px;
   border-radius: 6px;
@@ -244,14 +260,14 @@ h3 {
   flex: 0 0 auto;
 }
 
-.news-site {
+.nouvelle-site {
   font-family: 'Inter', sans-serif;
   font-size: 0.95em;
   color: #111;
   line-height: 1.2;
 }
 
-.news-url {
+.nouvelle-url {
   font-family: 'Inter', sans-serif;
   font-size: 0.85em;
   color: #666;
@@ -259,7 +275,7 @@ h3 {
 }
 
 /* Titre bleu (style Google) */
-.news-title {
+.nouvelle-title {
   margin: 0 0 8px 0;
   font-family: 'Inter', sans-serif;
   font-size: 1.6em;
@@ -268,7 +284,7 @@ h3 {
 }
 
 /* Extrait gris */
-.news-snippet {
+.nouvelle-snippet {
   margin: 0;
   font-family: 'Inter', sans-serif;
   font-size: 1em;
@@ -276,3 +292,107 @@ h3 {
   color: #4d5156;
 }
 
+/* ====== EXPERIENCE : LOGOS PULSANTS ====== */
+.xp-cloud{
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 340px;
+  margin: 35px auto 0;
+}
+
+/* bulle */
+.xp-bubble{
+  position: absolute;
+  left: var(--x, 50%);
+  top: var(--y, 50%);
+  transform: translate(-50%, -50%) scale(var(--s, 1));
+
+  width: 86px;
+  height: 86px;
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(16,24,40,.12);
+  box-shadow: 0 10px 25px rgba(16,24,40,.10);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation:
+    xpPulse 2.7s ease-in-out infinite;
+
+  animation-delay: var(--d, 0s), calc(var(--d, 0s) * 1.3);
+  will-change: transform, box-shadow;
+
+  isolation: isolate;
+}
+
+.xp-bubble::after{
+    content:"";
+    position: absolute;
+    inset: -22px;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(108,92,231,.18), transparent 60%);
+    opacity:.35;
+    z-index: -1;
+}
+
+/* logo */
+.xp-bubble img{
+  width: 56%;
+  height: 56%;
+  object-fit: contain;
+}
+.xp-bubble.big{
+  width: 112px;
+  height: 112px;
+}
+
+.xp-bubble.medium{
+  width: 92px;
+  height: 92px;
+}
+
+.xp-bubble.small{
+  width: 74px;
+  height: 74px;
+}
+
+.xp-bubble.big img{ width: 62%; height: 62%; }
+.xp-bubble.medium img{ width: 58%; height: 58%; }
+.xp-bubble.small img{ width: 54%; height: 54%; }
+
+
+
+/* pulse (grossit/rapetisse) */
+@keyframes xpPulse{
+  0%, 100%{
+    transform: translate(-50%, -50%) scale(var(--s, 1));
+    box-shadow: 0 10px 25px rgba(16,24,40,.10);
+  }
+  50%{
+    transform: translate(-50%, -50%) scale(calc(var(--s, 1) * 1.10));
+    box-shadow: 0 16px 45px rgba(16,24,40,.18);
+  }
+}
+
+/* hover */
+.xp-bubble:hover,
+.xp-bubble:focus-visible{
+  transform: translate(-50%, -50%) scale(calc(var(--s, 1) * 1.18));
+  box-shadow: 0 18px 60px rgba(16,24,40,.22);
+  outline: none;
+}
+
+/* mobile : réduit taille et hauteur */
+@media (max-width: 576px){
+  .xp-cloud{ height: 420px; }
+  .xp-bubble{ width: 72px; height: 72px; }
+}
+
+/* accessibilité */
+@media (prefers-reduced-motion: reduce){
+  .xp-bubble{ animation: none; }
+}
