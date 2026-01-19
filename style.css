@@ -67,7 +67,7 @@ h3 {
     padding-top: 60px;
 }
 
-/* Section About */
+/* Section À propos de moi */
 .about {
     background: url('https://lh3.googleusercontent.com/-AcWr5_cFuKM/Vzhh0t3QCJI/AAAAAAAAOtE/BYyyhvdCgP0YEIScNmoVewX-O1QmxiHuQCCo/s2048/LOGO5.jpg')
         no-repeat center center fixed;
@@ -82,14 +82,6 @@ h3 {
     background-color: #ebebeb;
     padding-top: 60px;
     min-height: 100%;
-}
-
-/* Section Contact */
-.contact {
-    background-color: #ebebeb;
-    width: 100%;
-    padding-top: 70px;
-    padding-bottom: 80px;
 }
 
 /* Centrer le contenu de la section Home */
@@ -292,7 +284,7 @@ h3 {
   color: #4d5156;
 }
 
-/* ====== EXPERIENCE : LOGOS PULSANTS ====== */
+/* ====== TECHNOLOGIES : LOGOS PULSANTS ====== */
 .xp-cloud{
   position: relative;
   width: 100%;
@@ -396,3 +388,57 @@ h3 {
 @media (prefers-reduced-motion: reduce){
   .xp-bubble{ animation: none; }
 }
+
+/* Section Technologies */
+.technologies {
+    background: url('h-co-06t5GTd8KBQ-unsplash.jpg')
+        no-repeat center center fixed;
+    background-size: cover;
+    
+    min-height: 100vh;
+    height: auto;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.technologies .section-title {
+  color: #fff;
+}
+
+.technologies::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  pointer-events: none;
+}
+
+.technologies {
+  position: relative;
+}
+.technologies .container {
+  position: relative;
+  z-index: 1;
+}
+
+.reveal{
+  opacity: 0;
+  transform: translateY(20px);
+
+  animation: revealIn linear forwards;
+  animation-timeline: view();
+  animation-range: entry 0% entry 70%;
+}
+
+@keyframes revealIn{
+  to{ opacity:1; transform:none; }
+}
+
+/* Fallback pour Firefox */
+@supports not (animation-timeline: view()){
+  .reveal{ opacity:1; transform:none; animation:none; }
+}
+
+
+
+
