@@ -41,12 +41,14 @@
                 <li><a href="#technologies">Technologies</a></li>
                 <li><a href="#projets">Projets</a></li>
                 <li><a href="#site-web">Site web</a></li>
-                <li><a href="#nouvelles">Nouvelles</a></li
+                <li><a href="#nouvelles">Nouvelles</a></li>
             </ul>
         </div>
 
     </div>
 </nav>
+
+
 
 <!-- Page d'accueil -->
 <div class="home" id="home">
@@ -128,11 +130,9 @@
 <div class="technologies" id="technologies">
   <div class="container">
     <h1 class="text-center section-title reveal">Technologies utilisées</h1>
-
     <div class="xp-cloud reveal" aria-label="Technologies utilisées">
-        
-
-        <div class="xp-bubble small" style="--x:8%;  --y:22%; --s:1.05; --d:0s;">
+      
+      <div class="xp-bubble small" style="--x:8%;  --y:22%; --s:1.05; --d:0s;">
         <img src="images/logo/arcgis-logo.png" alt="ArcGis">
       </div>
 
@@ -216,18 +216,19 @@
 </div>
 
 <!-- Site web -->
- <div class="portfolio" id="site-web">
-    <div class="container">
-        <h1 class="text-center reveal">Site web</h1>
-        <a href="https://gitlab.igem.org/2025/ulaval"
-        target="_blank"
-        class="site-web-card featured reveal">
-        <div class="site-web-content">
-            <h3>iGEM ULaval 2025</h3>
-            <p> Développement du site web officiel de l’équipe iGEM ULaval 2025 : design, intégration front-end et structuration du contenu scientifique. </p>
-            <span class="tech"> HTML • CSS • JavaScript • GitLab • iGEM </span>
-        </div>
-    </a>
+<div class="site-web" id="site-web">
+  <div class="container">
+      <h1 class="text-center">Site web</h1>
+      <a href="https://gitlab.igem.org/2025/ulaval"
+      target="_blank"
+      class="site-web-card featured reveal">
+      <div class="site-web-content">
+        <h3>iGEM ULaval 2025</h3>
+        <p> Développement du site web officiel de l’équipe iGEM ULaval 2025 : design, intégration front-end et structuration du contenu scientifique. </p>
+        <span class="tech"> HTML • CSS • JavaScript • GitLab • iGEM </span>
+      </div>
+      </a>
+  </div>
 </div>
 
 
@@ -261,6 +262,33 @@
   </div>
 </div>
 
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+
+      <div class="footer-left">
+        <p class="footer-name">Alison Ouellet</p>
+        <p class="footer-role">Étudiante en bio-informatique</p>
+      </div>
+
+      <div class="footer-center">
+        <a href="mailto:alison.ouellet@email.com">alison.ouellet.2@ulaval.ca</a>
+        <span>•</span>
+        <a href="https://github.com/AlisonOuellet" target="_blank">GitHub</a>
+        <span>•</span>
+        <a href="https://www.linkedin.com/in/alison-ouellet-4120253a2/"
+           target="_blank">LinkedIn</a>
+      </div>
+
+      <div class="footer-right">
+        <p>© 2026</p>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
 
 <!-- Bootstrap JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -280,5 +308,39 @@
 
 
 </body>
+<script>
+  (function () {
+    const navbar = document.querySelector('.navbar');
+    let lastScrollY = window.pageYOffset;
+    const trigger = 40;
+
+    function onScroll() {
+      const current = window.pageYOffset;
+
+      // Marque que la page a été scrollée au moins une fois
+      if (current > trigger) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+
+      // Scroll vers le bas → cacher
+      if (current > lastScrollY && current > trigger) {
+        navbar.classList.add('nav-hidden');
+      }
+      // Scroll vers le haut → montrer
+      else {
+        navbar.classList.remove('nav-hidden');
+      }
+
+      lastScrollY = current;
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('load', onScroll);
+  })();
+</script>
+
+
 </html>
 

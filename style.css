@@ -1,14 +1,24 @@
 /* Barre de navigation */
-.navbar .navbar-nav {
-    display: inline-block;
-    position: relative;
-    float: none;
-    top: -60%; /* Position initiale du menu hors de l'écran */
-    transition: top 0.3s ease; /* Animation de transition quand scroll vers le bas*/
+.navbar {
+    transition: transform .35s ease, box-shadow .25s ease;
+    will-change: transform;
+}
+
+.navbar .navbar-nav{
+  display: inline-block;
+  position: relative;
+  float: none;
+  top: 0;
+  transition: transform .35s ease, opacity .35s ease;
 }
 
 .navbar.show-menu .navbar-nav {
-  top: 0;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.navbar.nav-hidden{
+  transform: translateY(-100%);
 }
 
 /* Centrer le menu */
@@ -24,6 +34,7 @@
     text-align: center;
     margin: 0 auto;
 }
+
 
 /* Styles globaux */
 html,
@@ -67,22 +78,6 @@ h3 {
     padding-top: 60px;
 }
 
-/* Section À propos de moi */
-.about {
-    background: url('https://lh3.googleusercontent.com/-AcWr5_cFuKM/Vzhh0t3QCJI/AAAAAAAAOtE/BYyyhvdCgP0YEIScNmoVewX-O1QmxiHuQCCo/s2048/LOGO5.jpg')
-        no-repeat center center fixed;
-    background-size: cover;
-    min-height: 100vh;
-    height: auto;
-    padding-top: 60px;
-}
-
-/* Section Portfolio */
-.portfolio {
-    background-color: #ebebeb;
-    padding-top: 60px;
-    min-height: 100%;
-}
 
 /* Centrer le contenu de la section Home */
 .home .container {
@@ -116,7 +111,7 @@ h3 {
 /* Styles pour chaque lien social */
 .social__link {
     display: block;
-    color: rgba(255, 255, 255, 0.8); /* sur ton fond sombre */
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     transition: transform 150ms ease, opacity 150ms ease;
 }
@@ -136,155 +131,20 @@ h3 {
     display: block;
 }
 
-
-/* ====== PROJETS + SITE WEB ====== */
-
-.projet-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    background-color: #ffffff;
-    border-radius: 6px;
-    padding: 25px;
-    margin-bottom: 20px;
-
-    text-decoration: none;
-    color: #333;
-
-    min-height: 260px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.site-web-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    background-color: #ffffff;
-    border-radius: 6px;
-    padding: 25px;
-    margin-bottom: 20px;
-
-    text-decoration: none;
-    color: #333;
-
-    min-height: 180px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.projet-card:hover,
-.projet-card:focus,
-.site-web-card:hover,
-.site-web-card:focus {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    text-decoration: none;
-}
-
-.projet-card h3,
-.site-web-card h3 {
-    margin-top: 0;
-    margin-bottom: 0px;
-    font-weight: 600;
-    font-family: 'Inter', sans-serif;
-}
-
-.projet-card p,
-.site-web-card p {
-    font-size: 0.95em;
-    line-height: 1.4;
-    flex-grow: 1;
-    color: #333;
-    font-family: 'Inter', sans-serif;
-}
-
-.projet-card .tech,
-.site-web-card .tech {
-    font-size: 0.8em;
-    color: #777;
-    margin-top: 15px;
-}
-
-/* Featured (même pour les deux) */
-.projet-card.featured,
-.site-web-card.featured {
-    border: 2px solid #797c80;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    position: relative;
-}
-
-
-/* ====== NOUVELLES ====== */
-
-.nouvelle-result {
-  display: block;
-  background: #fff;
-  border-radius: 10px;
-  padding: 22px 26px;
-  text-decoration: none;
-  color: inherit;
-  margin: 20px 0;
-  transition: box-shadow .2s ease, transform .2s ease;
-}
-
-.nouvelle-result:hover,
-.nouvelle-result:focus {
-  text-decoration: none;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-}
-
-/* Ligne source */
-.nouvelle-source {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-
-.nouvelle-favicon {
-  width: 22px;
-  height: 22px;
-  border-radius: 6px;
-  background: #d93025; /* rouge ULaval-ish */
-  display: inline-block;
-  flex: 0 0 auto;
-}
-
-.nouvelle-site {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95em;
-  color: #111;
-  line-height: 1.2;
-}
-
-.nouvelle-url {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85em;
-  color: #666;
-  line-height: 1.2;
-}
-
-/* Titre bleu (style Google) */
-.nouvelle-title {
-  margin: 0 0 8px 0;
-  font-family: 'Inter', sans-serif;
-  font-size: 1.6em;
-  font-weight: 500;
-  color: #1a0dab;
-}
-
-/* Extrait gris */
-.nouvelle-snippet {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  font-size: 1em;
-  line-height: 1.55;
-  color: #4d5156;
+/* Section À propos de moi */
+.about {
+    background-size: cover;
+    min-height: 100vh;
+    height: auto;
+    padding-top: 60px;
+    padding-bottom: 80px;
 }
 
 /* ====== TECHNOLOGIES : LOGOS PULSANTS ====== */
+#technologies {
+  padding-bottom: 80px;
+}
+
 .xp-cloud{
   position: relative;
   width: 100%;
@@ -356,7 +216,41 @@ h3 {
 .xp-bubble.medium img{ width: 58%; height: 58%; }
 .xp-bubble.small img{ width: 54%; height: 54%; }
 
+/* hover */
+.xp-bubble:hover,
+.xp-bubble:focus-visible{
+  transform: translate(-50%, -50%) scale(calc(var(--s, 1) * 1.18));
+  box-shadow: 0 18px 60px rgba(16,24,40,.22);
+  outline: none;
+}
 
+
+.technologies{
+  position: relative;
+  min-height: 100vh;
+  padding-top: 60px;
+  overflow: hidden;
+}
+
+/* Image de fond */
+.technologies::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url('images/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg')
+    no-repeat center center fixed;
+  background-size: cover;
+
+  opacity: 0.30;
+  z-index: 0;
+}
+
+/* Contenu au-dessus */
+.technologies .container{
+  position: relative;
+  z-index: 1;
+}
 
 /* pulse (grossit/rapetisse) */
 @keyframes xpPulse{
@@ -370,14 +264,6 @@ h3 {
   }
 }
 
-/* hover */
-.xp-bubble:hover,
-.xp-bubble:focus-visible{
-  transform: translate(-50%, -50%) scale(calc(var(--s, 1) * 1.18));
-  box-shadow: 0 18px 60px rgba(16,24,40,.22);
-  outline: none;
-}
-
 /* mobile : réduit taille et hauteur */
 @media (max-width: 576px){
   .xp-cloud{ height: 420px; }
@@ -389,34 +275,111 @@ h3 {
   .xp-bubble{ animation: none; }
 }
 
-/* Section Technologies */
-.technologies {
-    background: url('h-co-06t5GTd8KBQ-unsplash.jpg')
-        no-repeat center center fixed;
-    background-size: cover;
-    
-    min-height: 100vh;
-    height: auto;
-    padding-top: 60px;
-    padding-bottom: 60px;
+/* ====== PROJETS + SITE WEB ====== */
+#projets {
+  padding-bottom: 80px;
 }
 
-.technologies .section-title {
-  color: #fff;
+.projet-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 12px 30px rgba(16, 24, 40, 0.12);
+
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 25px;
+    margin-bottom: 20px;
+
+    text-decoration: none;
+    color: #333;
+
+    min-height: 260px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.technologies::before {
+.site-web-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 25px;
+    margin-bottom: 20px;
+
+    text-decoration: none;
+    color: #333;
+
+    min-height: 180px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.projet-card:hover,
+.projet-card:focus,
+.site-web-card:hover,
+.site-web-card:focus {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+}
+
+.projet-card h3,
+.site-web-card h3 {
+    margin-top: 0;
+    margin-bottom: 0px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
+.projet-card p,
+.site-web-card p {
+    font-size: 0.95em;
+    line-height: 1.4;
+    flex-grow: 1;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+}
+
+.projet-card .tech,
+.site-web-card .tech {
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 15px;
+}
+
+/* Featured (même pour les deux) */
+.projet-card.featured,
+.site-web-card.featured {
+    border: 2px solid #797c80;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+/* Section Site web */
+.site-web{
+  position: relative;
+  min-height: 50vh;
+  padding-top: 60px;
+  overflow: hidden;
+  padding-bottom: 80px;
+}
+
+/* Image de fond */
+.site-web::before{
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
-  pointer-events: none;
+
+  background: url('images/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg')
+    no-repeat center center fixed;
+  background-size: cover;
+
+  opacity: 0.30;
+  z-index: 0;
 }
 
-.technologies {
-  position: relative;
-}
-.technologies .container {
+/* Contenu au-dessus */
+.site-web .container{
   position: relative;
   z-index: 1;
 }
@@ -440,5 +403,124 @@ h3 {
 }
 
 
+/* ====== NOUVELLES ====== */
+#nouvelles {
+  padding-bottom: 80px;
+}
 
+.nouvelle-result {
+  display: block;
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px 20px;
+  text-decoration: none;
+  color: inherit;
+  margin: 20px 0;
+  transition: box-shadow .2s ease, transform .2s ease;
+}
 
+.nouvelle-result:hover,
+.nouvelle-result:focus {
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* Ligne source */
+.nouvelle-source {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.nouvelle-favicon {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: #d93025; /* rouge ULaval-ish */
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
+.nouvelle-site {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95em;
+  color: #111;
+  line-height: 1.2;
+}
+
+.nouvelle-url {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85em;
+  color: #666;
+  line-height: 1.2;
+}
+
+/* Titre bleu (style Google) */
+.nouvelle-title {
+  margin: 0 0 8px 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.6em;
+  font-weight: 500;
+  color: #1a0dab;
+}
+
+/* Extrait gris */
+.nouvelle-snippet {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  line-height: 1.55;
+  color: #4d5156;
+}
+
+.site-footer{
+  background: #111;
+  color: #bbb;
+  padding: 40px 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9em;
+}
+
+.footer-content{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-footer a{
+  color: #ddd;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.site-footer a:hover{
+  color: #fff;
+}
+
+.footer-name{
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.footer-role{
+  margin: 4px 0 0;
+  color: #aaa;
+}
+
+.footer-center span{
+  margin: 0 6px;
+  color: #555;
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .footer-content{
+    flex-direction: column;
+    text-align: center;
+  }
+}
