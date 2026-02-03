@@ -566,3 +566,55 @@ h3 {
     text-align: center;
   }
 }
+
+
+.to-top-img{
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+
+  width: 60px;
+  height: 60px;
+
+  background: url('images/d763608a-ac89-470c-9551-065099d81f17.png')
+              no-repeat center / contain;
+
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  opacity: 0;
+  transform: translateY(16px) scale(.9);
+  pointer-events: none;
+
+  transition:
+    opacity .25s ease,
+    transform .25s ease;
+
+  z-index: 9999;
+}
+
+/* visible */
+.to-top-img.is-visible{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* hover stylé */
+.to-top-img:hover{
+  transform: translateY(-4px) scale(1.08);
+}
+
+/* focus clavier */
+.to-top-img:focus-visible{
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+/* accessibilité */
+@media (prefers-reduced-motion: reduce){
+  .to-top-img{
+    transition: none;
+  }
+}
