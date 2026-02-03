@@ -200,8 +200,9 @@ h3 {
   position: absolute;
   left: var(--x, 50%);
   top: var(--y, 50%);
-  transform: translate(-50%, -50%) scale(var(--s, 1));
-
+  --hover: 1;
+  transform: translate(-50%, -50%) scale(calc(var(--s, 1) * var(--hover)));
+  
   width: 86px;
   height: 86px;
   border-radius: 999px;
@@ -214,13 +215,12 @@ h3 {
   align-items: center;
   justify-content: center;
 
-  animation:
-    xpPulse 2.7s ease-in-out infinite;
+  animation: xpPulse 2.7s ease-in-out infinite;
+  animation-delay: var(--d, 0s);
 
-  animation-delay: var(--d, 0s), calc(var(--d, 0s) * 1.3);
   will-change: transform, box-shadow;
 
-  isolation: isolate;
+  transition: transform .18s ease, box-shadow .18s ease;
 }
 
 .xp-bubble::after{
@@ -261,9 +261,10 @@ h3 {
 /* hover */
 .xp-bubble:hover,
 .xp-bubble:focus-visible{
-  transform: translate(-50%, -50%) scale(calc(var(--s, 1) * 1.18));
+  --hover: 1.18;
   box-shadow: 0 18px 60px rgba(16,24,40,.22);
   outline: none;
+  z-index:10;
 }
 
 
@@ -297,11 +298,11 @@ h3 {
 /* pulse (grossit/rapetisse) */
 @keyframes xpPulse{
   0%, 100%{
-    transform: translate(-50%, -50%) scale(var(--s, 1));
+    transform: translate(-50%, -50%) scale(calc(var(--s, 1) * var(--hover)));
     box-shadow: 0 10px 25px rgba(16,24,40,.10);
   }
   50%{
-    transform: translate(-50%, -50%) scale(calc(var(--s, 1) * 1.10));
+    transform: translate(-50%, -50%) scale(calc(var(--s, 1) * var(--hover) * 1.10));
     box-shadow: 0 16px 45px rgba(16,24,40,.18);
   }
 }
