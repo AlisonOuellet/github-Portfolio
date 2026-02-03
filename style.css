@@ -4,12 +4,54 @@
     will-change: transform;
 }
 
+/* Animation des liens au chargement (comme ton exemple) */
+.navbar .nav-anim > li > a{
+  display: inline-block;            /* important pour transformer le lien */
+  opacity: 0;
+  animation: slideTop 0.8s ease forwards;
+  animation-delay: calc(.12s * var(--i));
+}
+
+/* Keyframes (tu peux garder exactement ceux de l'exemple) */
+@keyframes slideTop{
+  0%{ transform: translateY(18px); opacity: 0; }
+  100%{ transform: translateY(0); opacity: 1; }
+}
+
+
 .navbar .navbar-nav{
   display: inline-block;
   position: relative;
   float: none;
   top: 0;
   transition: transform .35s ease, opacity .35s ease;
+}
+
+.navbar-nav > li > a.active {
+  font-weight: 700;
+  opacity: 1;
+}
+
+.navbar-nav > li > a {
+  position: relative;
+}
+
+.navbar-nav > li > a::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:6px;
+  width:0;
+  height:2px;
+  background: currentColor;
+  transition: width .25s ease, left .25s ease;
+  opacity: .9;
+}
+
+.navbar-nav > li > a.active::after,
+.navbar-nav > li > a:hover::after{
+  width:70%;
+  left:15%;
 }
 
 .navbar.show-menu .navbar-nav {

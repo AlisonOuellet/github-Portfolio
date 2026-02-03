@@ -35,13 +35,13 @@
 
         <!-- Menu de navigation -->
         <div class="collapse navbar-collapse" id="menu">
-            <ul class="nav navbar-nav">
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#about">À propos de moi</a></li>
-                <li><a href="#technologies">Technologies</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#site-web">Site web</a></li>
-                <li><a href="#nouvelles">Nouvelles</a></li>
+            <ul class="nav navbar-nav nav-anim">
+                <li><a href="#home" style="--i:1">Accueil</a></li>
+                <li><a href="#about" style="--i:2">À propos de moi</a></li>
+                <li><a href="#skills" style="--i:3">Technologies</a></li>
+                <li><a href="#projets" style="--i:4">Projets</a></li>
+                <li><a href="#site-web" style="--i:5">Site web</a></li>
+                <li><a href="#nouvelles" style="--i:6">Nouvelles</a></li>
             </ul>
         </div>
 
@@ -339,6 +339,26 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('load', onScroll);
   })();
+</script>
+
+<script>
+(function () {
+  const sections = document.querySelectorAll('div[id]'); // tes sections sont des <div id="...">
+  const links = document.querySelectorAll('.navbar-nav a[href^="#"]');
+
+  const setActive = (id) => {
+    links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+  };
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      setActive(e.target.id);
+    });
+  }, { rootMargin: "-35% 0px -55% 0px" });
+
+  sections.forEach(s => obs.observe(s));
+})();
 </script>
 
 
