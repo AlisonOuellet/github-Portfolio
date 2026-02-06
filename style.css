@@ -1,3 +1,28 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 2147483647;
+}
+
+.cursor__ball {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2147483647;
+}
+
+.cursor__ball circle {
+  fill: rgba(0,0,0,0.6);
+}
+
+/* Cache la souris PARTOUT */
+html, body, a, button, .projet-card, .site-web-card {
+  cursor: none !important;
+}
+
+
 /* Barre de navigation */
 .navbar {
     transition: transform .35s ease, box-shadow .25s ease;
@@ -87,6 +112,7 @@ body {
     padding: 0;
     font-family: 'Pacifico', cursive;
     font-size: 16px;
+    cursor: none;
 }
 
 /* Titres */
