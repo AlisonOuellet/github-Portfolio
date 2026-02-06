@@ -323,11 +323,20 @@ h3 {
   padding-bottom: 80px;
 }
 
+.projet-card h3 {
+    margin-top: 0;
+    margin-bottom: 0px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
 .projet-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    box-shadow: 0 12px 30px rgba(16, 24, 40, 0.12);
+
+    position: relative;
+    overflow: hidden;
 
     background-color: #ffffff;
     border-radius: 6px;
@@ -336,10 +345,81 @@ h3 {
 
     text-decoration: none;
     color: #333;
-
     min-height: 260px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    transform: translateY(0) scale(1);
+    transition: transform .22s ease, box-shadow .22s ease;
+    will-change: transform, box-shadow;
+    
+    box-shadow: 0 12px 30px rgba(16, 24, 40, 0.12);
 }
+
+.projet-card:hover,
+.projet-card:focus-visible {
+    transform: translateY(-28px) scale(1.06);
+    box-shadow: 
+      0 40px 90px rgba(16, 24, 40, 0.22),
+      0 14px 30px rgba(108, 92, 231, 0.18);
+    outline: none;
+ }
+ 
+
+.projet-card::after{
+  content:"";
+  position: absolute;
+
+  top:-120%;
+  left:-120%;
+  width: 300%;
+  height: 300%;
+
+  background: linear-gradient(
+    120deg,
+    transparent 40%,
+    rgba(108, 92, 231, .18) 50%,
+    transparent 60%
+  );
+
+  pointer-events: none;
+  opacity: 0;
+}
+
+.projet-card:hover::after,
+.projet-card:focus-visible::after{
+  opacity: 1;
+  animation: sweepLight 1.25s ease forwards;
+}
+
+.projet-card p {
+    font-size: 0.95em;
+    line-height: 1.4;
+    flex-grow: 1;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+}
+
+.projet-card .tech {
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 15px;
+}
+
+/* Featured (même pour les deux) */
+.projet-card.featured {
+    border: 2px solid #797c80;
+}
+
+@keyframes sweepLight{
+  from{
+    transform: translate(-20%, -30%);
+  }
+  to{
+    transform: translate(30%, 30%);
+  }
+}
+
+
+/* ====== SITE WEB ====== */
 
 .site-web-card {
     display: flex;
@@ -361,13 +441,13 @@ h3 {
 .projet-card:hover,
 .projet-card:focus,
 .site-web-card:hover,
-.site-web-card:focus {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+.site-web-card:focus-visible {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 18px 45px rgba(16, 24, 40, 0.18);
     text-decoration: none;
+    outline: none;
 }
 
-.projet-card h3,
 .site-web-card h3 {
     margin-top: 0;
     margin-bottom: 0px;
@@ -375,7 +455,13 @@ h3 {
     font-family: 'Inter', sans-serif;
 }
 
-.projet-card p,
+.site-web-card{
+  position: relative;                 /* pour l’overlay */
+  overflow: hidden;                   /* garde l'effet propre */
+  transition: transform .22s ease, box-shadow .22s ease;
+  will-change: transform;
+}
+
 .site-web-card p {
     font-size: 0.95em;
     line-height: 1.4;
@@ -384,7 +470,6 @@ h3 {
     font-family: 'Inter', sans-serif;
 }
 
-.projet-card .tech,
 .site-web-card .tech {
     font-size: 0.8em;
     color: #777;
@@ -392,11 +477,8 @@ h3 {
 }
 
 /* Featured (même pour les deux) */
-.projet-card.featured,
 .site-web-card.featured {
     border: 2px solid #797c80;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    position: relative;
 }
 /* Section Site web */
 .site-web{
